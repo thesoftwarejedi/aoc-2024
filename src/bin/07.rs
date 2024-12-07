@@ -2,7 +2,6 @@ advent_of_code::solution!(7);
 
 pub fn part_one(input: &str) -> Option<u64> {
     let mut sum: u64 = 0;
-    let mut count = 0;
     let mut max_target = 0;
     let mut max_numbers = 0;
     
@@ -22,12 +21,6 @@ pub fn part_one(input: &str) -> Option<u64> {
             sum += target;
         }
     }
-    
-    println!("\nStatistics:");
-    println!("Number of valid equations: {}", count);
-    println!("Largest target value: {}", max_target);
-    println!("Max numbers in an equation: {}", max_numbers);
-    println!("Final sum: {}", sum);
     
     Some(sum)
 }
