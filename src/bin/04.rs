@@ -74,7 +74,7 @@ fn find_xmas_part2(grid: &Vec<Vec<char>>, row: usize, col: usize) -> u32 {
     let mut count = 0;
 
     // Check both diagonal pairs
-    'diagonal_check: for diagonal_pair in diagonals {
+    for diagonal_pair in diagonals {
         // Check if both diagonals form valid patterns
         let mut valid_diagonals = 0;
 

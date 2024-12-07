@@ -28,7 +28,7 @@ pub fn part_two(input: &str) -> Option<u32> {
         match matched {
             "do()" => enabled = true,
             "don't()" => enabled = false,
-            mul_expr => {
+            _mul_expr => {
                 if enabled {
                     // If we're here, we matched a mul expression and have captures
                     let x: u32 = cap[1].parse().unwrap();

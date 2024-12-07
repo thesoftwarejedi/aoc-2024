@@ -17,7 +17,6 @@ pub fn part_one(input: &str) -> Option<u64> {
         max_numbers = max_numbers.max(numbers.len());
 
         if can_make_value(target, &numbers) {
-            count += 1;
             sum += target;
         }
     }

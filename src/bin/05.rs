@@ -60,7 +60,7 @@ pub fn part_two(input: &str) -> Option<u32> {
 
     let mut middle_sum = 0;
 
-    'updates: for update in updates {
+    for update in updates {
         if update.is_empty() {
             continue;
         }
