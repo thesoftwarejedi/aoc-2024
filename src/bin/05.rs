@@ -5,29 +5,27 @@ pub fn part_one(input: &str) -> Option<u32> {
     let parts: Vec<&str> = input.split("\n\n").collect();
     let rules = parts[0].lines();
     let updates = parts[1].lines();
-    
+
     // Parse rules into (before, after) pairs
     let rule_pairs: Vec<(u32, u32)> = rules
         .filter(|line| !line.is_empty())
         .map(|rule| {
-            let nums: Vec<u32> = rule.split('|')
-                .map(|n| n.parse().unwrap())
-                .collect();
+            let nums: Vec<u32> = rule.split('|').map(|n| n.parse().unwrap()).collect();
             (nums[0], nums[1])
         })
         .collect();
 
     // Process each update
     let mut middle_sum = 0;
-    
+
     'updates: for update in updates {
-        if update.is_empty() { continue; }
-        
+        if update.is_empty() {
+            continue;
+        }
+
         // Parse update numbers
-        let nums: Vec<u32> = update.split(',')
-            .map(|n| n.parse().unwrap())
-            .collect();
-            
+        let nums: Vec<u32> = update.split(',').map(|n| n.parse().unwrap()).collect();
+
         // Check all applicable rules
         for (before, after) in &rule_pairs {
             if nums.contains(before) && nums.contains(after) {
@@ -38,7 +36,7 @@ pub fn part_one(input: &str) -> Option<u32> {
                 }
             }
         }
-        
+
         // Valid update - add middle number to sum
         middle_sum += nums[nums.len() / 2];
     }
@@ -50,28 +48,26 @@ pub fn part_two(input: &str) -> Option<u32> {
     let parts: Vec<&str> = input.split("\n\n").collect();
     let rules = parts[0].lines();
     let updates = parts[1].lines();
-    
+
     // Parse rules into (before, after) pairs
     let rule_pairs: Vec<(u32, u32)> = rules
         .filter(|line| !line.is_empty())
         .map(|rule| {
-            let nums: Vec<u32> = rule.split('|')
-                .map(|n| n.parse().unwrap())
-                .collect();
+            let nums: Vec<u32> = rule.split('|').map(|n| n.parse().unwrap()).collect();
             (nums[0], nums[1])
         })
         .collect();
 
     let mut middle_sum = 0;
-    
+
     'updates: for update in updates {
-        if update.is_empty() { continue; }
-        
+        if update.is_empty() {
+            continue;
+        }
+
         // Parse update numbers
-        let mut nums: Vec<u32> = update.split(',')
-            .map(|n| n.parse().unwrap())
-            .collect();
-            
+        let mut nums: Vec<u32> = update.split(',').map(|n| n.parse().unwrap()).collect();
+
         // Check if update is invalid
         let mut is_valid = true;
         for (before, after) in &rule_pairs {
@@ -84,7 +80,7 @@ pub fn part_two(input: &str) -> Option<u32> {
                 }
             }
         }
-        
+
         if !is_valid {
             // Sort the invalid update
             nums.sort_by(|a, b| {
@@ -101,7 +97,7 @@ pub fn part_two(input: &str) -> Option<u32> {
                 }
                 std::cmp::Ordering::Equal
             });
-            
+
             middle_sum += nums[nums.len() / 2];
         }
     }

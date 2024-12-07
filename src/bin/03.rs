@@ -3,8 +3,9 @@ advent_of_code::solution!(3);
 pub fn part_one(input: &str) -> Option<u32> {
     // Use regex to find valid mul(X,Y) patterns
     let re = regex::Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)").unwrap();
-    
-    let sum = re.captures_iter(input)
+
+    let sum = re
+        .captures_iter(input)
         .map(|cap| {
             let x: u32 = cap[1].parse().unwrap();
             let y: u32 = cap[2].parse().unwrap();
@@ -18,7 +19,7 @@ pub fn part_one(input: &str) -> Option<u32> {
 pub fn part_two(input: &str) -> Option<u32> {
     // Match both control instructions and multiplication operations
     let re = regex::Regex::new(r"(?:do\(\)|don't\(\)|mul\((\d{1,3}),(\d{1,3})\))").unwrap();
-    
+
     let mut enabled = true;
     let mut sum = 0;
 

@@ -3,10 +3,16 @@ use itertools::Itertools;
 advent_of_code::solution!(1);
 
 pub fn part_one(input: &str) -> Option<u32> {
-    let lines = input.lines().map(|line| { 
-        let line = line.split_whitespace().collect_vec(); 
-        (line[0].parse::<i32>().unwrap(), line[1].parse::<i32>().unwrap())
-    }).collect_vec();
+    let lines = input
+        .lines()
+        .map(|line| {
+            let line = line.split_whitespace().collect_vec();
+            (
+                line[0].parse::<i32>().unwrap(),
+                line[1].parse::<i32>().unwrap(),
+            )
+        })
+        .collect_vec();
     let mut left: Vec<i32> = lines.iter().map(|(l, _)| *l).collect_vec();
     let mut right: Vec<i32> = lines.iter().map(|(_, r)| *r).collect_vec();
 
@@ -22,15 +28,22 @@ pub fn part_one(input: &str) -> Option<u32> {
 }
 
 pub fn part_two(input: &str) -> Option<u32> {
-    let lines = input.lines().map(|line| { 
-        let line = line.split_whitespace().collect_vec(); 
-        (line[0].parse::<i32>().unwrap(), line[1].parse::<i32>().unwrap())
-    }).collect_vec();
-    
+    let lines = input
+        .lines()
+        .map(|line| {
+            let line = line.split_whitespace().collect_vec();
+            (
+                line[0].parse::<i32>().unwrap(),
+                line[1].parse::<i32>().unwrap(),
+            )
+        })
+        .collect_vec();
+
     let left: Vec<i32> = lines.iter().map(|(l, _)| *l).collect_vec();
     let right: Vec<i32> = lines.iter().map(|(_, r)| *r).collect_vec();
 
-    let similarity_score: i32 = left.iter()
+    let similarity_score: i32 = left
+        .iter()
         .map(|left_val| {
             // Count occurrences of left_val in right list
             let count = right.iter().filter(|&&r| r == *left_val).count() as i32;

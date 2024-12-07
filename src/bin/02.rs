@@ -9,7 +9,7 @@ pub fn part_one(input: &str) -> Option<u32> {
                 .split_whitespace()
                 .map(|n| n.parse().unwrap())
                 .collect();
-            
+
             if numbers.len() < 2 {
                 return false;
             }
@@ -17,27 +17,27 @@ pub fn part_one(input: &str) -> Option<u32> {
             // Check if sequence is increasing or decreasing
             let mut increasing = true;
             let mut decreasing = true;
-            
+
             for i in 1..numbers.len() {
-                let diff = numbers[i] - numbers[i-1];
-                
+                let diff = numbers[i] - numbers[i - 1];
+
                 // Check if difference is between 1 and 3
                 if diff.abs() < 1 || diff.abs() > 3 {
                     return false;
                 }
-                
+
                 if diff > 0 {
                     decreasing = false;
                 } else {
                     increasing = false;
                 }
-                
+
                 // If neither increasing nor decreasing, it's not safe
                 if !increasing && !decreasing {
                     return false;
                 }
             }
-            
+
             true
         })
         .count() as u32;
@@ -54,7 +54,7 @@ pub fn part_two(input: &str) -> Option<u32> {
                 .split_whitespace()
                 .map(|n| n.parse().unwrap())
                 .collect();
-            
+
             if numbers.len() < 2 {
                 return false;
             }
@@ -72,12 +72,12 @@ pub fn part_two(input: &str) -> Option<u32> {
                     .filter(|(i, _)| *i != skip_idx)
                     .map(|(_, &n)| n)
                     .collect();
-                
+
                 if is_safe(&modified) {
                     return true;
                 }
             }
-            
+
             false
         })
         .count() as u32;
@@ -92,25 +92,25 @@ fn is_safe(numbers: &[i32]) -> bool {
 
     let mut increasing = true;
     let mut decreasing = true;
-    
+
     for i in 1..numbers.len() {
-        let diff = numbers[i] - numbers[i-1];
-        
+        let diff = numbers[i] - numbers[i - 1];
+
         if diff.abs() < 1 || diff.abs() > 3 {
             return false;
         }
-        
+
         if diff > 0 {
             decreasing = false;
         } else {
             increasing = false;
         }
-        
+
         if !increasing && !decreasing {
             return false;
         }
     }
-    
+
     true
 }
 
