@@ -17,6 +17,7 @@ Will keep notes here as the days go on.
 Notes:
 - Day 3: Oops, got on the leaderboard. Will check it next time - I wasn't thinking it was that fast.
 - Day 6: I'm having to start actually reading and helping it similar to a junior dev.
+- Day 9: Actually did almost perfect on this one.  I just had to tell it the results of the test from part 1 and it correct3ed.  Part 2 was perfect.
 
 <!--- advent_readme_stars table --->
 ## 2024 Results
@@ -37,16 +38,17 @@ Notes:
 
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---:  |
-| [Day 1](./src/bin/01.rs) | `66.0µs` | `80.7µs` |
-| [Day 2](./src/bin/02.rs) | `90.1µs` | `166.4µs` |
-| [Day 3](./src/bin/03.rs) | `196.0µs` | `245.1µs` |
-| [Day 4](./src/bin/04.rs) | `201.3µs` | `120.6µs` |
-| [Day 5](./src/bin/05.rs) | `800.7µs` | `2.0ms` |
-| [Day 6](./src/bin/06.rs) | `194.6µs` | `157.1ms` |
-| [Day 7](./src/bin/07.rs) | `4.4ms` | `13.2s` |
+| [Day 1](./src/bin/01.rs) | `65.6µs` | `79.2µs` |
+| [Day 2](./src/bin/02.rs) | `87.7µs` | `161.1µs` |
+| [Day 3](./src/bin/03.rs) | `185.9µs` | `240.0µs` |
+| [Day 4](./src/bin/04.rs) | `192.2µs` | `112.0µs` |
+| [Day 5](./src/bin/05.rs) | `804.7µs` | `2.0ms` |
+| [Day 6](./src/bin/06.rs) | `191.8µs` | `149.9ms` |
+| [Day 7](./src/bin/07.rs) | `4.3ms` | `12.9s` |
 | [Day 8](./src/bin/08.rs) | `10.8µs` | `502.2µs` |
+| [Day 9](./src/bin/09.rs) | `339.6ms` | `859.7ms` |
 
-**Total: 13365.66ms**
+**Total: 14258.13ms**
 <!--- benchmarking table --->
 
 ---
