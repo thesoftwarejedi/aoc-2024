@@ -17,8 +17,8 @@ Will keep notes here as the days go on.
 Notes:
 - Day 3: Oops, got on the leaderboard. Will check it next time - I wasn't thinking it was that fast.
 - Day 6: I'm having to start actually reading and helping it similar to a junior dev.
-- Day 9: Actually did almost perfect on this one.  I just had to tell it the results of the test from part 1 and it correct3ed.  Part 2 was perfect.
-
+- Day 9: Actually did almost perfect on this one.  I just had to tell it the results of the test from part 1 and it corrected.  Part 2 was perfect.
+- Day 10: First try, both parts. That's a first since day 6.
 <!--- advent_readme_stars table --->
 ## 2024 Results
 
@@ -47,8 +47,9 @@ Notes:
 | [Day 7](./src/bin/07.rs) | `4.3ms` | `12.9s` |
 | [Day 8](./src/bin/08.rs) | `10.8µs` | `502.2µs` |
 | [Day 9](./src/bin/09.rs) | `339.6ms` | `859.7ms` |
+| [Day 10](./src/bin/10.rs) | `120.7µs` | `88.2µs` |
 
-**Total: 14258.13ms**
+**Total: 14258.34ms**
 <!--- benchmarking table --->
 
 ---
