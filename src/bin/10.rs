@@ -152,7 +152,7 @@ fn calculate_trailhead_rating(grid: &[Vec<u32>], start: (i32, i32)) -> u32 {
         total_paths
     }
 
-    paths = dfs(start, grid, rows, cols, &mut memo);
+    let paths = dfs(start, grid, rows, cols, &mut memo);
     paths
 }
 

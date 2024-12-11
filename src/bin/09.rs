@@ -61,8 +61,6 @@ fn compact_disk(blocks: &mut Vec<Option<u64>>) {
 }
 
 fn compact_disk_whole_files(blocks: &mut Vec<Option<u64>>) {
-    let len = blocks.len();
-    
     // Find the highest file ID
     let max_file_id = blocks.iter()
         .filter_map(|&x| x)
