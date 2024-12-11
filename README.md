@@ -20,6 +20,7 @@ Notes:
 - Day 9: Actually did almost perfect on this one.  I just had to tell it the results of the test from part 1 and it corrected.  Part 2 was perfect.
 - Day 10: First try, both parts. That's a first since day 6.
 - Day 11: Second part needed told to optimize the algorithm to produce an answer in an acceptable time, which it did perfectly on the first try.
+- Day 7: Part 2 was a bit slow. Told it to optimize and it did. Wow.
 <!--- advent_readme_stars table --->
 ## 2024 Results
 
@@ -49,13 +50,13 @@ Notes:
 | [Day 4](./src/bin/04.rs) | `192.2µs` | `112.0µs` |
 | [Day 5](./src/bin/05.rs) | `804.7µs` | `2.0ms` |
 | [Day 6](./src/bin/06.rs) | `191.8µs` | `149.9ms` |
-| [Day 7](./src/bin/07.rs) | `4.3ms` | `12.9s` |
+| [Day 7](./src/bin/07.rs) | `4.4ms` | `10.5ms` |
 | [Day 8](./src/bin/08.rs) | `10.8µs` | `502.2µs` |
 | [Day 9](./src/bin/09.rs) | `339.6ms` | `859.7ms` |
 | [Day 10](./src/bin/10.rs) | `120.7µs` | `88.2µs` |
 | [Day 11](./src/bin/11.rs) | `186.2µs` | `10.2ms` |
 
-**Total: 14268.73ms**
+**Total: 1379.33ms**
 <!--- benchmarking table --->
 
 ---

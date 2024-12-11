@@ -70,7 +70,7 @@ pub fn part_two(input: &str) -> Option<u64> {
             .map(|n| n.parse().unwrap())
             .collect();
 
-        if can_make_value_part2(target, &numbers) {
+        if can_make_value_part2_fast(target, &numbers) {
             sum += target;
         }
     }
@@ -78,73 +78,68 @@ pub fn part_two(input: &str) -> Option<u64> {
     Some(sum)
 }
 
-#[derive(Copy, Clone, Debug)]
-enum Op {
-    Add,
-    Mul,
-    Concat,
-}
-
-fn can_make_value_part2(target: u64, numbers: &[u64]) -> bool {
+fn can_make_value_part2_fast(target: u64, numbers: &[u64]) -> bool {
     if numbers.len() == 1 {
         return numbers[0] == target;
     }
 
-    let ops_needed = numbers.len() - 1;
-    let combinations = 1 << (2 * ops_needed); // 2 bits per operator
+    // Use a stack-based approach instead of recursion
+    let mut stack = Vec::new();
+    stack.push((numbers[0], 1)); // (current_value, next_index)
 
-    'outer: for i in 0..combinations {
-        let mut result = numbers[0];
+    while let Some((value, idx)) = stack.pop() {
+        if idx == numbers.len() {
+            if value == target {
+                return true;
+            }
+            continue;
+        }
 
-        for pos in 0..ops_needed {
-            let op = match (i >> (2 * pos)) & 3 {
-                0 => Op::Add,
-                1 => Op::Mul,
-                2 => Op::Concat,
-                _ => Op::Add,
-            };
+        let next = numbers[idx];
 
-            let next = numbers[pos + 1];
-
-            result = match op {
-                Op::Add => {
-                    if let Some(r) = result.checked_add(next) {
-                        r
-                    } else {
-                        continue 'outer;
-                    }
-                }
-                Op::Mul => {
-                    if let Some(r) = result.checked_mul(next) {
-                        r
-                    } else {
-                        continue 'outer;
-                    }
-                }
-                Op::Concat => {
-                    let s = format!("{}{}", result, next);
-                    if s.len() <= 20 {
-                        match s.parse::<u64>() {
-                            Ok(n) => n,
-                            Err(_) => continue 'outer,
-                        }
-                    } else {
-                        continue 'outer;
-                    }
-                }
-            };
-
-            if result > target {
-                continue 'outer;
+        // Try addition
+        if let Some(sum) = value.checked_add(next) {
+            if sum <= target {
+                stack.push((sum, idx + 1));
             }
         }
 
-        if result == target {
-            return true;
+        // Try multiplication
+        if let Some(product) = value.checked_mul(next) {
+            if product <= target {
+                stack.push((product, idx + 1));
+            }
+        }
+
+        // Try concatenation
+        if let Some(concat) = concat_numbers(value, next) {
+            if concat <= target {
+                stack.push((concat, idx + 1));
+            }
         }
     }
 
     false
+}
+
+#[inline]
+fn concat_numbers(a: u64, b: u64) -> Option<u64> {
+    let b_digits = count_digits(b);
+    let shift = 10_u64.pow(b_digits as u32);
+    a.checked_mul(shift).and_then(|x| x.checked_add(b))
+}
+
+#[inline]
+fn count_digits(mut n: u64) -> u32 {
+    if n == 0 {
+        return 1;
+    }
+    let mut count = 0;
+    while n > 0 {
+        count += 1;
+        n /= 10;
+    }
+    count
 }
 
 #[cfg(test)]
@@ -160,6 +155,6 @@ mod tests {
     #[test]
     fn test_part_two() {
         let result = part_two(&advent_of_code::template::read_file("inputs", DAY));
-        assert_eq!(result, Some(11387));
+        assert_eq!(result, Some(424977609625985));
     }
 }
