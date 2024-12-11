@@ -19,6 +19,7 @@ Notes:
 - Day 6: I'm having to start actually reading and helping it similar to a junior dev.
 - Day 9: Actually did almost perfect on this one.  I just had to tell it the results of the test from part 1 and it corrected.  Part 2 was perfect.
 - Day 10: First try, both parts. That's a first since day 6.
+- Day 11: Second part needed told to optimize the algorithm to produce an answer in an acceptable time, which it did perfectly on the first try.
 <!--- advent_readme_stars table --->
 ## 2024 Results
 
