@@ -31,6 +31,10 @@ Notes:
 | [Day 5](https://adventofcode.com/2024/day/5) | ⭐ | ⭐ |
 | [Day 6](https://adventofcode.com/2024/day/6) | ⭐ | ⭐ |
 | [Day 7](https://adventofcode.com/2024/day/7) | ⭐ | ⭐ |
+| [Day 7](https://adventofcode.com/2024/day/8) | ⭐ | ⭐ |
+| [Day 7](https://adventofcode.com/2024/day/9) | ⭐ | ⭐ |
+| [Day 7](https://adventofcode.com/2024/day/10) | ⭐ | ⭐ |
+| [Day 7](https://adventofcode.com/2024/day/11) | ⭐ | ⭐ |
 <!--- advent_readme_stars table --->
 
 <!--- benchmarking table --->
@@ -48,8 +52,9 @@ Notes:
 | [Day 8](./src/bin/08.rs) | `10.8µs` | `502.2µs` |
 | [Day 9](./src/bin/09.rs) | `339.6ms` | `859.7ms` |
 | [Day 10](./src/bin/10.rs) | `120.7µs` | `88.2µs` |
+| [Day 11](./src/bin/11.rs) | `186.2µs` | `10.2ms` |
 
-**Total: 14258.34ms**
+**Total: 14268.73ms**
 <!--- benchmarking table --->
 
 ---
