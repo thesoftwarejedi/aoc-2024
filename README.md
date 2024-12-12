@@ -21,6 +21,13 @@ Notes:
 - Day 10: First try, both parts. That's a first since day 6.
 - Day 11: Second part needed told to optimize the algorithm to produce an answer in an acceptable time, which it did perfectly on the first try.
 - Day 7: Part 2 was a bit slow. Told it to optimize and it did. Wow.
+- Day 12: That's a wrap. It solved the first star, but could not solve the second star. I spent about 15 mins screaming at it and then whispering sweet nothings into its ear. It simply couldn't figure it out.
+
+## Conclusion
+
+The LLM is a great tool for solving problems. It's not perfect, but it's a great way to get started and get a feel for the problem.
+It has some pretty serious limitations as you can see with the finale on Day 12.  That problem required reasoning around something that just isn't prolific inside an LLMs training. Remember, it's just a pattern completion model.
+
 <!--- advent_readme_stars table --->
 ## 2024 Results
 
@@ -55,8 +62,9 @@ Notes:
 | [Day 9](./src/bin/09.rs) | `339.6ms` | `859.7ms` |
 | [Day 10](./src/bin/10.rs) | `120.7µs` | `88.2µs` |
 | [Day 11](./src/bin/11.rs) | `186.2µs` | `10.2ms` |
+| [Day 12](./src/bin/12.rs) | `303.1µs` | `870.7µs` |
 
-**Total: 1379.33ms**
+**Total: 1380.50ms**
 <!--- benchmarking table --->
 
 ---
